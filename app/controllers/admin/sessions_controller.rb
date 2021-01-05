@@ -1,6 +1,7 @@
 class Admin::SessionsController < Devise::SessionsController
  layout false  
  # before_action :configure_sign_in_params, only: [:create]
+ skip_before_action :verify_authenticity_token
   # GET /resource/sign_in
   def new
     super
@@ -24,13 +25,13 @@ class Admin::SessionsController < Devise::SessionsController
   def destroy
     Rails.cache.delete("current_employee_#{current_employee.id}".to_sym)
     sign_out
-    redirect_to admin_employees_path
+    redirect_to admin_alarms_path
     #super
   end
 
   # 登录后不同角色跳转
   def login_jump_url
-   admin_employees_path
+    admin_alarms_path
   end
 
   # protected

@@ -2,13 +2,18 @@ zh:
   ################################# status config #################################
   activerecord:
     status:
-      temporary_report:  
-        report_type:
-          general: "普通报表"
-          association: "关联报表"
-          composite: "合成报表"
-          test: "辅助工具报表"
-      temporary_chart:
-        chart_type:
-          line: '折线图' 
-          bar: '柱状图'     
+      robot:
+        online_status:
+          disabled: "已禁用"     
+          enabled: "已启用" 
+        polling_status:
+          un_polling: "不参与轮巡"
+          polling: "轮巡机器"
+      alarm:
+        event_tag:
+          start_node_off: "一级告警"
+          out_node_off: "二级告警"  
+          recovery: "恢复" 
+        alarm_status:
+          prepare: "待处理"     
+          finish: "已处理"

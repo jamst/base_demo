@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.com'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -7,16 +7,21 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.2'
+gem 'rails', '5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem "non-stupid-digest-assets"
+
+gem 'redis', '~> 3.3'
+gem 'redis-namespace', '~> 1.5'
+gem 'redis-rails', '~> 5.0'
+gem 'redis-objects', '~> 1.3'
 # Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'kaminari', github: 'amatsuda/kaminari'
@@ -29,6 +34,17 @@ gem 'default_where', github: 'jamst/default_where'
 
 gem 'spreadsheet'
 gem 'roo'
+
+# 定时任务
+gem 'whenever', require: false
+
+# 队列任务
+gem 'sidekiq', '~> 4.2'
+gem 'sidekiq-cron', '~> 0.4.5', require: false
+gem 'mqtt', :git => 'https://github.com/njh/ruby-mqtt.git'
+
+# 爬虫
+gem 'httparty'
 
 # Login & Authority
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
@@ -63,6 +79,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry'
+  gem 'pry-rails'
+
+  gem 'mina', '~> 0.3.8', require: false
+  gem 'mina-puma', :require => false
+  gem 'mina-sidekiq', '~> 0.4.1', require: false
+  gem 'mina-multistage', '~> 1.0', '>= 1.0.2', require: false
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

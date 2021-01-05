@@ -3,13 +3,17 @@ default: &default
   pool: 5
   reconnect: true
   username: root
-  password: 
+  password: root123
 
 development:
   <<: *default
-  database: mba_education
+  database: base_demo
 
-# 配置报表数据源
-from:
+prepare:
   <<: *default
-  database: mba_education
+  database: base_demo
+
+production:
+  <<: *default
+  database: base_demo    
+
