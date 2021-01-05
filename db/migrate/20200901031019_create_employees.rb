@@ -1,4 +1,4 @@
-class CreateRobots < ActiveRecord::Migration[5.2]
+class CreateEmployees < ActiveRecord::Migration[5.2]
   def change
     create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "员工表" do |t|
         t.string   "email",                            default: "",  null: false, comment: "email"
