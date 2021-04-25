@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <title>BaseDemo</title>
+    <%= stylesheet_link_tag 'admin/application' %>
+    <%= javascript_include_tag 'admin/application' %>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-108548624-1');
+    </script>
+
+    <%= csrf_meta_tags %>
+    <style type="text/css">
+      #trackings canvas{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display:block;
+        vertical-align:bottom;
+      }
+
+      #trackings .ui[class*="six column"].grid>.row>.column, .ui[class*="six column"].grid>.column:not(.row){
+        padding: 0;
+        margin: 1rem 0;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <%= render 'shared/admin/top_bar' %>
+    <div class="pusher">
+      <div class="ui fluid container" >
+        <div class="ui two column grid">
+
+          <div class="side menu open_menu" id="sideMenu">
+            <%= render 'shared/admin/sidebar' %>
+          </div>
+
+          <div class="sixteen wide column" id="content">
+            <div class="thirteen wide column">
+              <%= yield %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <%= yield :scripts %>
+
+    <div id="particles_id"></div>
+
+    <%= javascript_include_tag 'lizi/particles' %>
+    <%= javascript_include_tag 'lizi/app' %>
+
+    <script type="text/javascript">
+      function refresh_tracking(){
+        $.ajax({
+          url: "/admin/remote_nodes/node_status_report",
+          type: "get",
+          dataType: 'script'
+        });
+      }
+      setInterval('refresh_tracking()',60000)//指定60秒刷新一次
+    </script>
+
+  </body>
+</html>

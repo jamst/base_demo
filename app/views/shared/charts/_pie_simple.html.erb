@@ -1,0 +1,37 @@
+<%= javascript_include_tag 'echarts.min' %>
+<script type="text/javascript">
+    var div_tag = "<%= div_id %>"
+    var myChart = echarts.init(document.getElementById(div_tag));
+    myChart.setOption({
+        title : {
+            text: '<%= chart_title %>',
+            subtext: '<%= show_time %>',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        series : [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    <% @report_arrys.each do |c|%>
+                    {value:<%=c["v"].to_i%>, name:"<%=c["k"]%>"},
+                    <% end %>
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    });
+
+</script>

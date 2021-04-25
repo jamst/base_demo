@@ -1,15 +1,16 @@
 <div class="ui vertical fluid menu" id="verticalMenu">
   <ul>
     <li>
-      <a class="item">
-        <i class="bar chart icon"></i>
-        <span class="main_menu">用户管理</span>
+      <% isin = action_on_list([admin_employees_path]) %>
+      <a class="item <%= isin ? "active" : "" %> ">
+        <i class="configure icon"></i>
+        <span class="main_menu">系统管理</span>
         <i class="right dropdown icon"></i>
       </a>
-      <div class="menu content child active">
-        <%= link_to admin_employees_path, class: 'item', active_class: 'actives' do %>
+      <div class="menu content child active" style="<%= isin ? "display: block;" : "" %>">
+        <%= link_to_with_permissions admin_employees_path, class: 'item', active_class: 'actives' do %>
           <i class="left bullseye icon"></i>
-          <span>员工管理</span>
+          <span>管理员列表</span>
         <% end %>
       </div>
     </li>

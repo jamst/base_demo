@@ -3,13 +3,17 @@ default: &default
   pool: 5
   reconnect: true
   username: root
-  password: 
+  password: jamst@123
 
 development:
   <<: *default
-  database: mba_education
+  database: product-flow
 
-# 配置报表数据源
-from:
+prepare:
   <<: *default
-  database: mba_education
+  database: product-flow
+
+production:
+  <<: *default
+  database: product-flow    
+
