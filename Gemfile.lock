@@ -118,7 +118,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
     crass (1.0.6)
     domain_name (0.5.20190701)
@@ -203,6 +203,8 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.7)
     nokogiri (1.11.3-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.11.3-x86_64-linux)
       racc (~> 1.4)
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
@@ -305,11 +307,10 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sidekiq (4.2.10)
-      concurrent-ruby (~> 1.0)
-      connection_pool (~> 2.2, >= 2.2.0)
+    sidekiq (5.2.0)
+      connection_pool (~> 2.2, >= 2.2.2)
       rack-protection (>= 1.5.0)
-      redis (~> 3.2, >= 3.2.1)
+      redis (>= 3.3.5, < 5)
     sidekiq-cron (0.4.5)
       redis-namespace (>= 1.5.2)
       rufus-scheduler (>= 2.0.24)
@@ -361,6 +362,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-16
+  x86_64-linux
 
 DEPENDENCIES
   aliyun-sdk
@@ -399,7 +401,7 @@ DEPENDENCIES
   roo
   sass-rails (~> 5.0)
   selenium-webdriver
-  sidekiq (~> 4.2)
+  sidekiq (~> 5.2)
   sidekiq-cron (~> 0.4.5)
   simple_form
   spreadsheet
