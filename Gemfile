@@ -45,7 +45,7 @@ gem 'mongoid'
 gem "mini_magick"
 
 # 队列任务
-gem 'sidekiq', '~> 4.2'
+gem 'sidekiq', '~> 5.2'
 gem 'sidekiq-cron', '~> 0.4.5', require: false
 
 # aliyun_oss
