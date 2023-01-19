@@ -118,7 +118,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.10)
     connection_pool (2.2.5)
     crass (1.0.6)
     domain_name (0.5.20190701)
@@ -142,15 +142,15 @@ GEM
     fugit (1.4.5)
       et-orbi (~> 1.1, >= 1.1.8)
       raabro (~> 1.4)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    i18n (1.8.10)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
@@ -191,7 +191,7 @@ GEM
       mina
     mini_magick (4.11.0)
     mini_mime (1.1.0)
-    minitest (5.14.4)
+    minitest (5.17.0)
     mongo (2.14.0)
       bson (>= 4.8.2, < 5.0.0)
     mongoid (7.2.2)
@@ -203,6 +203,8 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.7)
     nokogiri (1.11.3-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.11.3-x86_64-linux)
       racc (~> 1.4)
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
@@ -337,7 +339,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.9)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
@@ -361,6 +363,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-16
+  x86_64-linux
 
 DEPENDENCIES
   aliyun-sdk
